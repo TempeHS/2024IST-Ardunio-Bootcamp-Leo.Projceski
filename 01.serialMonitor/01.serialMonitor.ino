@@ -8,9 +8,11 @@
     5. I understand the impact of having more than one setup or loop methods in my sketch
   
   Student Notes: 
-  setup = sets arduino up 
+  - setup = sets arduino up 
 
-  loop = loops arduino
+  - loop = loops arduino
+
+  - You can use serial monitor to graph data and identify issues
 
 
 
@@ -22,10 +24,13 @@
 // The setup function runs once when you press reset or power the board
 void setup() {
   Serial.begin(9600);
-  Serial.print("Hello World");
-}
+  Serial.println("Serial Monitor is configured to 9600");
+  Serial.println("-----------------------");
+} 
 
 // The loop function runs over and over again forever
 void loop() {
-
+    while(!Serial.available());
+    String myString = Serial.readString();
+    Serial.print(myString);
 }
