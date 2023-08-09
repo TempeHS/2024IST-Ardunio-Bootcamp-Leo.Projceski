@@ -19,10 +19,12 @@
 */
 
 String myString = "Hello world";
-int   myint = 3; 
-bool   mybool = false;
+int   myInt = 3; 
+bool   myBool = false;
 float myFloat = 3.14;
 long myLong = 3.1415926589;
+unsigned int myint2 = 5;
+static unsigned int myInt3 = 7;
 
 void setup() {
 Serial.begin(9600);
@@ -31,5 +33,8 @@ Serial.println("-----------------------");
 }
 
 void loop() {
-
+  myBool = true;
+  myString = myBool;
+  myInt = myFloat;
+  Serial.println(String(myLong));
 }
